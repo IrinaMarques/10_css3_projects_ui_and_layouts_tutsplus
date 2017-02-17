@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Palanquin;
+  line-height: 1.618em;
+  background: #3498db;
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+h1.loading {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+/* find each element have the class attribute begining with the value dot */
+span[class^='dot_'] {
+  opacity: 0;
+}
+/* specify the name of the animatin to run - the time - the loop - animation timing function*/
+.dot_one {
+  animation: dot_one 2s infinite linear;
+}
+
+.dot_two {
+  animation: dot_two 2s infinite linear;
+}
+
+.dot_three {
+  animation: dot_three 2s infinite linear;
+}
+
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 5rem auto 15rem auto;
+  text-align: center;
+}
+
+
+@keyframes dot_one {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dot_two {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dot_three {
+  0% {
+    opacity: 0;
+  }
+  65% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+

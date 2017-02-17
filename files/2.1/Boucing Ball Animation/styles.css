@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Palanquin;
+  line-height: 1.618em;
+  background: #3498db;
+  color: #fff;
+}
+
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+/* Position of the bouncing ball */
+.bouncing_ball {
+  position: relative; /* can control the position of the ball */
+  width: 4rem;
+  margin: 0 auto;
+  height: 12rem;
+}
+ /* Size and shape of the ball */
+.ball {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  animation: bounce 1s infinite; /*make the animation run */
+}
+
+@keyframes bounce {
+  0% {
+    top: 0;
+    animation-timing-function: ease-in; /*makes the animation slower */
+  }
+  34% {
+    height: 4rem; /* to make the squishy effect */
+    width: 4rem; /* to make the squishy effect */
+  }
+  35% {
+    top: 8rem;
+    height: 3rem; /* to make the squishy effect */
+    width: 4.3rem; /* to make the squishy effect in the impact with the ground */
+    animation-timing-function: ease-out; /*ball will back up again */
+  }
+  45% {
+    height: 4rem; 
+    width: 4rem;
+  }
+  90% {
+    top: 0;
+  }
+  100% {
+    top: 0;
+  }
+}
