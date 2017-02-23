@@ -101,3 +101,20 @@ In the third case we add a slide line effect.
 We don't need the data-linktext anymore.
 
 We going to style the classes
+
+===========================
+2.3 Engaging CSS3 Buttons
+===========================
+
+Slide button background
+- From left
+- From right
+- From Top
+- From Bottom
+
+Grow button background
+- Grow Box
+- Grow Ellipse
+- Grow Skew
+- Grow Spin
+
