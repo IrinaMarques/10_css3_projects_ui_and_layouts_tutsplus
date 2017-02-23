@@ -1,0 +1,153 @@
+body {
+  font-family: "Open Sans";
+  font-size: 1.125rem;
+  line-height: 1.618em;
+  color: #454545;
+}
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 2rem auto;
+}
+a {
+  color: #3498db;
+}
+
+/* FADE IN EFFECT */
+/* style in default state */
+a.fade_in_bg {
+  text-decoration: none; /* remove the underline */
+  padding-left: 0.25em; /* add a litle padding between the letters and the blue color when hover */ 
+  padding-right: 0.25em;
+  padding-bottom: 0.05em;
+  border-bottom: 0.0625em dotted #3498db; /* replace the underline for the dotted underline */
+  transition: all 0.35s; /* add a fading in both */
+}
+
+/* style in hover state */
+/* transition: all 0.35s; - between the two styles if there are any transition it will happen in 0.35s */
+a.fade_in_bg:hover {
+  background: #3498db; /* blue color */
+  color: #fff; /* the text switch to white */
+  transition: all 0.35s; /* add a fading in both */
+}
+
+/* ------------------------------------------------------------------------------------------*/
+/* SLIDE BACKGROUND EFFECT*/
+/* find all ^= the links a[] that have a class name starting with slide and apply this */
+a[class^="slide"] {
+  text-decoration: none;
+  line-height: 1.5em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
+  border-bottom: 0.0625em dotted #3498db;
+  position: relative; /* we use this position because we are going to use absolute position */
+  display: inline-block; /* allows to have more control over the layout */
+  overflow: hidden; /* targeting all the slide links and set the overflow hidden */
+  vertical-align: bottom;
+}
+
+/* find all the slider links and set the content for the pseudo-element ::after to pull in the text from our data-linktext attribuite */
+/* starts invisible and slides the direction that we want */
+a[class^="slide"]::after {
+  content: attr(data-linktext); /* create a second text */
+  background: #3498db;
+  color: #fff;
+  position: absolute; 
+  display: block;
+  text-align: center;
+  transition: all 0.35s; /*make the slide effect */
+}
+/*remove the dotted when it's hover */
+a[class^="slide"]:hover {
+  border-bottom: 0.0625em solid #3498db;
+}
+/*to make it slide when it hover */
+a[class^="slide"]:hover::after {
+  /* everything to 0 to make it overlay */
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: all 0.35s; /*make the slide effect */
+}
+/* to make the elements slide from one place to other */
+a.slide_from_left::after {
+  top: 0;
+  right: 100%;
+  left: -100%;
+}
+a.slide_from_right::after {
+  top: 0;
+  right: -100%;
+  left: 100%;
+}
+a.slide_from_top::after {
+  top: -100%;
+  bottom: 100%;
+}
+a.slide_from_bottom::after {
+  top: 100%;
+  bottom: -100%;
+}
+
+/* ------------------------------------------------------------------------------------------*/
+/* SLIDE LINE EFFECT*/
+a.fade_in_underline {
+  text-decoration: none;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+  padding-bottom: 0.05em;
+  border-bottom: 0.125em solid #fff; /* we are going to transition from a withe underline to a blue one */
+  transition: all 0.35s; /* transition from default state to a hover state and the hover pseudo-element */
+}
+a.fade_in_underline:hover {
+  border-bottom: 0.125em solid #3498db; /* the blue underline */
+  transition: all 0.35s; /* transition from default state to a hover state and the hover pseudo-element */
+}
+/*target all the links that have a class of underline */
+a[class^='underline'] {
+  text-decoration: none;
+  padding-left: 0.125em;
+  padding-right: 0.125em;
+  padding-bottom: 0.05em;
+  position: relative;
+}
+
+a[class^='underline']::after {
+  content: ''; 
+  position: absolute;
+  top: 100%;
+  border-bottom: 0.125em solid #3498db;
+  transition: all 0.35s; /* transition from default state to a hover state and the hover pseudo-element */
+}
+a[class^='underline']:hover::after {
+  transition: all 0.35s; /* transition from default state to a hover state and the hover pseudo-element */
+}
+
+/* add from here we want the lines appear */
+/**/
+a.underline_from_left::after {
+  left: 0;
+  right: 100%;
+}
+a.underline_from_left:hover::after {
+  right: 0;
+}
+/**/
+a.underline_from_right::after {
+  right: 0;
+  left: 100%;
+}
+a.underline_from_right:hover::after {
+  left: 0;
+}
+/**/
+a.underline_from_center::after {
+  right: 50%;
+  left: 50%;
+}
+a.underline_from_center:hover::after {
+  right: 0;
+  left: 0;
+}

@@ -1,0 +1,103 @@
+===========================
+2.1 CSS3 Loading Animations
+===========================
+
+2.1.1 - Animate the dots.
+
+1.
+Html - dot's in a span class
+<span class="dot_one"> .</span>
+
+2.
+Css - we locate all three of them and set the opacity to 0
+span[class^='dot_'] {
+  opacity: 0;
+}
+
+3. 
+Start animate the first dot with keyframes
+@keyframes dot_one {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+4.
+The animation is ready to go if we set the target - how much time, the loop and the animation timing function.
+.dot_one {
+  animation: dot_one 2s infinite linear;
+
+5. 
+We do the same for the other dots.
+We only have to change the percentenge of time.
+Use:
+@keyframes
+and the animation target.
+
+2.1.2 Animate a bouncing ball
+
+1.
+Html create the div's.
+
+2.
+In the Css:
+.bouncing ball - defines the position
+.ball - difines the shape
+
+3.
+Use keyframes to define the animation with the name bounce.
+The ease-in time make the animation slower.
+@keyframes bounce { }
+
+4. 
+We define the width and height at determine points to make the animation more realistic.
+
+5.
+In the .ball class we set the animation.
+.ball {
+animation: bounce 1s infinite;
+}
+
+2.1.3 Animate a spinner
+
+1.
+In the HTML and CSS we define the spiner shape. 
+
+2.
+Then we create the shape of the curves and positioning it.
+
+3.
+Define how do they act with keyframes 
+
+4.
+Aplly the keyframe to our curves.
+
+===================================
+2.2 Make ordinary links interesting
+===================================
+
+1.
+In the first case we add a fade in effect to our link.
+
+2.
+In the second case we add a slide background effect
+in this case we have to add a data-linktext attribute in the HTML.
+
+The data attributes are part of HTML5 allows to define the extra pieces of data that can be attaced to any element.
+
+In this case data-linktext='other parts' the text will be accessed and reused by our css.
+
+3.
+In the third case we add a slide line effect.
+We don't need the data-linktext anymore.
+
+We going to style the classes
