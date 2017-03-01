@@ -118,3 +118,6 @@ Grow button background
 - Grow Skew
 - Grow Spin
 
+===========================
+2.4 Equal Height Columns
+===========================
