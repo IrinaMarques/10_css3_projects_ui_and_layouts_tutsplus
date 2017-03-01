@@ -1,0 +1,124 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans";
+  line-height: 1.618em;
+  color: #555;
+  background: #2c3e50;
+}
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 5rem;
+  background: #fff;
+  border: 0.5rem solid #34495e;
+}
+a {
+  text-decoration: none;
+  color: #3498db;
+}
+.fa {
+  font-size: 4rem;
+  margin: 1rem;
+}
+.fa-twitter {
+  color: #00b0ed;
+}
+.fa-facebook {
+  color: #3b5998;
+}
+ /* ---------------------------------------- */
+/* TOOLTIP */
+/*need to set to position relative */
+.tooltip {
+  position: relative;
+}
+
+/*show only when we hover over */
+.tooltip:hover .tip {
+  opacity: 1;
+  visibility: visible;
+  margin-left: 0.5rem;
+  transition: all 0.35s;
+}
+
+/* style the tips */
+/* need to be absolute */
+.tip {
+  opacity: 0;
+  visibility: hidden;
+  display: block; /* to control the margins and hide */
+  white-space: nowrap; /* in one line no break */
+  position: absolute;
+  z-index: 1; /* appear in the top */
+  left: 100%; /* relative to the icon */
+  bottom: 50%; /* relative to the icon */
+  padding: 1em;
+  margin-left: 0;
+  margin-top: 0.5rem;
+  font-size: 0.8em;
+  font-weight: normal;
+  background: #34495e;
+  border-radius: 1em;
+  color: #fff;
+  transition: all 0.35s;
+}
+
+/*to add a triangle near the tooltip */
+.tip::before {
+  content: '';
+  border-style: solid; /* set the triangle */
+  border-width: 0.5rem 0.625rem 0.5rem 0; /* set the triangle */
+  border-color: transparent #34495e transparent transparent; /* set the triangle */
+  position: absolute;
+  right: 100%;
+  bottom: calc(50% - 0.5rem); /*how far from the bubble the triangle is */
+  width: 0;
+  height: 0;
+}
+
+/* ---------------------------------------- */
+/* CITATIONS */
+sup {
+  position: relative;
+  cursor: pointer;
+}
+sup span {
+  cursor: default;
+  background: #ecf0f1;
+  border: 0.125rem solid #3498db;
+  position: absolute;
+  left: 0;
+  bottom: 100%;
+  margin: 0 0 0.7em -1em;
+  width: 12em;
+  padding: 1em;
+  line-height: 1.618em;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.35s;
+}
+sup span::before {
+  content: '';
+  border-style: solid;
+  border-width: 0.7em 0.7em 0 0.7em;
+  border-color: #3498db transparent transparent transparent;
+  position: absolute;
+  left: 0.7em;
+  bottom: -0.7em;
+  width: 0;
+  height: 0;
+}
+sup:hover span {
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.35s;
+}
+.footnotes {
+  margin: 60rem auto;
+}
+#footnote:target {
+  background: #ecf0f1;
+}

@@ -121,3 +121,9 @@ Grow button background
 ===========================
 2.4 Equal Height Columns
 ===========================
+
+===========================
+2.5 Tooltips and Citations
+===========================
+
+Hide the tips that only comes up when we hover our mouse.
