@@ -1,0 +1,103 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans";
+  background: #2c3e50;
+  color: #ecf0f1;
+  line-height: 1.618em;
+}
+
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tabs {
+  position: relative;
+  margin: 3rem 0;
+  background: #1abc9c;
+  height: 14.75rem; /* specific heigh to see the paragraph tag */
+}
+
+.tabs::before,
+.tabs::after {
+  content: "";
+  display: table;
+}
+
+/* use the clearfix to clear the float */
+.tabs::after {
+  clear: both;
+}
+
+/* need to float left */
+.tab {
+  float: left;
+}
+
+/* hides the button */
+.tab-switch {
+  display: none;
+}
+
+/* Style the tabs */
+.tab-label {
+  position: relative; /* relative and block display so the tabs will be next to each other */
+  display: block;
+  line-height: 2.75em;
+  height: 3em; /* remove the space between the tab and the content */
+  padding: 0 1.618em;
+  background: #1abc9c;
+  border-right: 0.125rem solid #16a085;
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+}
+
+.tab-label:hover {
+  top: -0.25rem; /* when the tab selected get up this size */
+  transition: top 0.25s;
+}
+
+/* remove the position in the tab content */
+.tab-content {
+  height: 12rem; /* give a consistent height */
+  position: absolute; /* make the tab content absolute and the tabs will be next to each other */
+  top: 2.75em; /* set the same height as the line-height in tab-label */
+  left: 0; /* all start on the left side */
+  z-index: 1; /* make the content hidden */
+  opacity: 0; /* make the content hidden */
+  transition: all 0.35s; /* make a fade in effect */
+  padding: 1.618rem;
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0.25rem solid #bdc3c7;
+}
+
+/* Style the tab for the current checked */
+.tab-switch:checked + .tab-label {
+  background: #fff;
+  color: #2c3e50;
+  border-bottom: 0;
+  border-right: 0.125rem solid #fff;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+
+/* The switch */
+/* make the switch work */
+/* search for a tab-switch class that is currently checked */
+/* all radio buttons have the class tab-switch */
+/* the + sign look for a sibling that is the label element */
+/* next look for a sibling with the class tab-content */
+/* He will find the radio button then the label and then the tab-content */ 
+.tab-switch:checked + label + .tab-content {
+  z-index: 2; /* when find the tab-contet set the z-index for 2 */
+  opacity: 1; /* remove the opacity */
+  transition: all 0.35s; /* set the same transition */
+}

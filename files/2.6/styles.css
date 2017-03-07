@@ -106,7 +106,7 @@ a {
   left: 0;
   right: 0;
   top: 0;
-  margin-top: -100%; /* outside the top of the page, this way it looks like is slidding down the top of the page */
+  margin-top: -100%; /* outside the top of the page, this way it looks like is sliding down the top of the page */
   background: linear-gradient(#1abc9c, #16a085);
   border-bottom: 0.125rem solid #1abc9c;
   box-shadow: rgba(0,0,0,0.4) 0 0.25rem 0.25rem 0;

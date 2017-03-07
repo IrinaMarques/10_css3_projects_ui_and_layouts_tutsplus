@@ -145,3 +145,12 @@ It's important to:
 It's important to: 
 - Have a standard class
 - Link going to a specific id 
+
+========================
+2.7 Animated CSS3 Tabs 
+========================
+
+Animated Tabs using only pure css. 
+
+Give the same id to the input an associated label.
+This system needs a fixed height - fos smaller widths use media queries. 
