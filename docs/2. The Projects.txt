@@ -127,3 +127,21 @@ Grow button background
 ===========================
 
 Hide the tips that only comes up when we hover our mouse.
+
+=================================
+2.6 Modals and Notification Bars
+=================================
+
+Create Modal and Notification Boxes using pure CSS. 
+Without JavaScript.
+
+- Modal - 
+It's important to:
+- have a div with a class modal 
+- Matching id's.
+- The div needs to link to the id associated with the modal pop-up box. 
+
+- Notifications -
+It's important to: 
+- Have a standard class
+- Link going to a specific id 

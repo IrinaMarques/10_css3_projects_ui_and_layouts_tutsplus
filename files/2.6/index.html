@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Modals and Notifications Bars</title>
+	<link href="https://fonts.googleapis.com/css?family=Palanquin:400" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 4. Div with the id that have to match and class -->
+	<div id="one" class="notification">
+    <div class="content">
+      <p>This is the "Success" notification's text content</p>
+      <div class="close"><a href="#">Close</a></div>
+    </div>
+  </div>
+
+  <div id="two" class="notification warning">
+    <div class="content">
+      <p>This is the "Warning" notification's text content</p>
+      <div class="close"><a href="#">Close</a></div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+
+    <p>My father had a small estate in default link Nottinghamshire: I was the third of five sons. He sent me to Emanuel College in Cambridge at fourteen years old, where I resided three years, and applied myself close to my studies; but the charge of maintaining me, although I had a very scanty allowance, being too great for a narrow fortune, I was bound apprentice to Mr. James Bates, an eminent surgeon in London, with whom I continued four years. </p>
+
+    <!-- MODAL -->
+    <!-- 1. Define .open_modal and link to a internal link #infopanel-->
+    <!-- 2. Create a div with a id infopanel and a .modal - modal pop-up hidden by default until the link #infopanel is clicked -->
+    <!-- 3. We'll style the div with .modal so it looks like a javascript pop-up box -->
+    <p><a href="#infopanel" class="open_modal">Open Modal</a>
+      <div id="infopanel" class="modal">
+      <!-- 4. A div to hold the content of the content box -->
+        <div class="content">
+          <h2>Modal Panel</h2>
+          <p>This panel could provide information or display images.</p>
+          <p>When you're done click the X button to close.</p>
+          <!-- 5. Inside the div a close button with a internal link just to close the infopanel -->
+          <div class="close"><a href="#">Close</a></div>
+        </div>
+      </div>
+    </p>
+
+    <!-- NOTIFICATIONS -->
+    <!-- 1. Standard class in each link .open_notification -->
+    <!-- 2. Links going to a specific id #one, #two -->
+    <!-- 3. Create the divs that this links will target - they are in the top of the HTML -->
+    <p><a href="#one" class="open_notification">Open "Success" Notification</a></p>
+    <p><a href="#two" class="open_notification">Open "Warning" Notification</a></p>
+  
+    <p>My father now and then sending me small sums of money, I laid them out in learning navigation, and other parts of the mathematics, useful to those who intend to travel, as I always believed it would be, some time or other, my fortune to do. When I left Mr. Bates, I went down to my father: where, by the assistance of him and my uncle John, and some other relations, I got forty pounds, and a promise of thirty pounds a year to maintain me at Leyden: there I studied physic two years and seven months, knowing it would be useful in long voyages.</p>
+
+  </div>
+
+</body>
+</html>

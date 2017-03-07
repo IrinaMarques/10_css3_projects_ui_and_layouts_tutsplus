@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans";
+  line-height: 1.618em;
+  color: #555;
+  background: #2c3e50;
+}
+
+a {
+  color: #3498db;
+}
+
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 5rem;
+  background: #fff;
+  border: 0.5rem solid #34495e;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* MODAL */
+/* Hide the modal from the page layout */
+/* All the classes we what to show should have the class modal */
+.modal {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+  left: 50%;
+  overflow: hidden;
+  background: transparent;
+}
+
+/* When we click the link we see the modal class */
+.modal:target {
+  background: rgba(0,0,0,0.75); /* dark grey */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background 0.35s;
+}
+
+/* Style the content inside the modal */
+.modal:target .content {
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: rgba(255,255,255,0.25) 0 0 0 0.5rem;
+  width: 30rem;
+  padding: 2rem;
+  position: absolute;
+  top: 30%;
+  left: calc(50% - 15rem); /* subtract half of the width of the pop-up - to center */
+}
+
+/* Style the close button */
+.modal:target .close {
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+}
+
+/* Replace the word close with a blue circle */
+.modal:target .close a {
+  display: block;
+  height: 2rem;
+  width: 2rem; /* this way we don't the the text anymore */
+  text-indent: 2rem; /*push the word close off to the right with 2 rem of width */
+  overflow: hidden; /* this class  hide the text */
+  background: #3498db;
+  border-radius: 50%;
+  border: 0.125rem solid #fff;
+}
+
+/* Add a X - we do that with the pseudo element */
+.modal:target .close:after {
+  content: 'X';
+  font-weight: 800;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  line-height: 2rem;
+  width: 2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* NOTIFICATION BARS */
+/* First the main notification class */
+.notification {
+  transition: all 0.35s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  margin-top: -100%; /* outside the top of the page, this way it looks like is slidding down the top of the page */
+  background: linear-gradient(#1abc9c, #16a085);
+  border-bottom: 0.125rem solid #1abc9c;
+  box-shadow: rgba(0,0,0,0.4) 0 0.25rem 0.25rem 0;
+}
+
+/* Style the content */
+.notification .content {
+  text-align: center;
+  color: #fff;
+  text-shadow: rgba(0,0,0,0.5) 0 -0.0625rem 0.0625rem;
+}
+
+/* Close button */
+.notification .close {
+  position: absolute;
+  top: calc(50% - 1rem); /* vertically centered */
+  right: 1rem;
+}
+
+.notification .close a {
+  display: block;
+  height: 2rem;
+  width: 2rem;
+  text-indent: 2rem;
+  overflow: hidden;
+}
+
+/* After element to the close shape */
+.notification .close:after {
+  content: 'X';
+  font-weight: 800;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  line-height: 2rem;
+  width: 2rem;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Target to set the margin top to 0 */
+/* When we click the target it comes down from -100% top down to 0 */
+.notification:target {
+  transition: all 0.35s;
+  margin-top: 0;
+}
+
+/* Styling the warning class */
+.warning {
+  background: linear-gradient(#e74c3c, #c0392b);
+  border-bottom: 0.125rem solid #e74c3c;
+}
+
+/* Many variations as we want just using a class and styling the class with the colors that we want */
