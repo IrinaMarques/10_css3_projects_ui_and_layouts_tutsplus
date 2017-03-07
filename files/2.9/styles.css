@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans";
+  line-height: 1.618em;
+  background: #ecf0f1;
+  color: #444;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* style in the slider */
+.slider {
+  background: #fff;
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+  padding-bottom: 2.5rem; /* to have small circles so can be clicked */
+  border: 0.25rem solid #95a5a6;
+}
+
+/* add a background to the place here the buttons are */
+.slider::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  content: '';
+  display: block;
+  background: #34495e;
+  height: 3rem;
+}
+
+/* don't show the radio buttons */
+.slide-switch {
+  display: none;
+}
+
+/* convert the labels into circles and move it down */
+.slide-label {
+  position: absolute;
+  bottom: 1rem;
+  display: block;
+  z-index: 5;
+  height: 1rem;
+  width: 1rem;
+  text-indent: 1rem; /* text cannot longer being seen */
+  overflow: hidden;
+  background: #2980b9;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+/* nth-of-type - looks for a specific instance of the class being used dependeing of the number between the brakets */
+/* this code affects the first */
+.slide-label:nth-of-type(1) {
+  left: 1rem;
+}
+
+.slide-label:nth-of-type(2) {
+  left: 2.5rem;
+}
+
+.slide-label:nth-of-type(3) {
+  left: 4rem;
+}
+
+/* we can use as many as we want, in this case only three */
+.slide-label:nth-of-type(4) {
+  left: 5.5rem;
+}
+
+.slide-label:nth-of-type(5) {
+  left: 7rem;
+}
+
+.padded {
+  padding: 1rem 2rem;
+}
+
+/* slide with a width of 100% and float left and give a negative margin */
+/* content div stay in the float of the document */ 
+.slide-content {
+  width: 100%;
+  background: #fff;
+  float: left;
+  margin-right: -100%; /* make the elements in top of each other */
+}
+
+/* Add the switch */
+/* Change the color of the selected circle */
+.slide-switch:checked + .slide-label {
+  background: #3498db;
+}
+
+/* the elements not selected at the moment */
+.slide-switch:not(:checked) + .slide-label + .slide-content {
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none; /* can't interact with the other sliders in the same area */
+}
+
+/* the one currently checked */
+.slide-switch:checked + .slide-label + .slide-content {
+  animation: slide 1s;
+}
+
+/* to make the slides slide */
+@keyframes slide {
+  0% {
+    transform: translateX(100%); /* X move horizontaly */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
