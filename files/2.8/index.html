@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CSS3 Menu Styles</title>
+	<link href="https://fonts.googleapis.com/css?family=Palanquin:400" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="wrapper">
+  <!-- Same technic as the tab menu: checkbox with a class -->
+  <input type="checkbox" id="open_menu" class="open_menu">
+
+  <label for="open_menu" class="burger"><i class="fa fa-bars"></i>Open Menu</label>
+
+  <!-- 1. nav element -->
+  <nav>
+    
+    <!-- each menu items is in a .menu_item -->
+    <!-- inside a link with a icon and with a text in a span -->
+    <div class="menu_item">
+      <a href="#design">
+        <i class="fa fa-paint-brush"></i>
+        <span>Design</span>
+      </a>
+    </div>
+
+    <div class="menu_item">
+      <a href="#code">
+        <i class="fa fa-code"></i>
+        <span>Coding</span>
+      </a>
+    </div>
+
+    <div class="menu_item">
+      <a href="#ecommerce">
+        <i class="fa fa-credit-card"></i>
+        <span>E-Commerce</span>
+      </a>
+    </div>
+
+    <div class="menu_item">
+      <a href="#marketing">
+        <i class="fa fa-bullhorn"></i>
+        <span>Marketing</span>
+      </a>
+    </div>
+
+  </nav>
+
+</div>
+
+<script src="https://use.fontawesome.com/9bee70bc05.js"></script>
+
+</body>
+</html>

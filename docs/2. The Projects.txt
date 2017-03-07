@@ -154,3 +154,8 @@ Animated Tabs using only pure css.
 
 Give the same id to the input an associated label.
 This system needs a fixed height - fos smaller widths use media queries. 
+
+======================
+2.8 CSS3 Menu Styles 
+======================
+

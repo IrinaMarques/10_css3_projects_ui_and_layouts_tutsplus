@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans";
+  line-height: 1.618em;
+}
+
+.wrapper {
+  max-width: 60rem;
+  width: 100%;
+  margin: 5rem auto;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* activate flebox */
+nav {
+  display: flex;
+  justify-content: center; /* align in the center */
+  font-size: 1.2em;
+}
+
+/* set the hight */
+nav .menu_item {
+  height: 3em;
+  line-height: 3em;
+}
+
+/* style the icons */
+nav .menu_item .fa {
+  display: block;
+  position: absolute;
+  left: 0;
+  background: #2980b9;
+  height: 100%;
+  line-height: inherit;
+  width: 3em;
+  text-align: center;
+  transition: all 0.35s;
+}
+
+/* the links */
+nav a {
+  position: relative;
+  display: block; /* we can control the layout */
+  padding-right: 2em;
+  height: 100%; /* fill the height */
+  background: #3498db;
+  color: #fff;
+  position: relative; /* absolute position to the icons */
+  z-index: 1;
+  overflow: hidden;
+  border-right: 0.25em solid #fff;
+}
+
+/*we don't need in the last the border */
+nav .menu_item:last-of-type a {
+  border-right: 0;
+}
+
+/*convert the span into a block element */
+nav a span {
+  display: block;
+  margin-left: 4.5em;
+}
+
+/* hover menu effect */
+nav a::after {
+  content: "";
+  background: #2980b9;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -100%;
+  right: 100%;
+  transition: all 0.35s;
+}
+
+.open_menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* don't show the menu */
+}
+
+.burger {
+  display: none;
+  font-size: 1.2em;
+  position: relative;
+  background: #3498db;
+  color: #fff;
+  width: 3em;
+  height: 3em;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 0.25em;
+  cursor: pointer;
+  transition: background 0.35s;
+}
+
+.burger .fa {
+  pointer-events: none;
+  display: block;
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+}
+
+/* THREE DIFERENT WAYS THAT THE MENU WILL APPEAR */
+/* FULL SPACE */
+@media (min-width: 55rem) {
+  nav a:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s;
+  }
+  nav a:hover .fa {
+    font-size: 1.25em;
+    width: 3.6em;
+    transition: all 0.35s;
+  }
+}
+
+/* IN MEDIUM SPACE */
+@media (max-width: 55rem) {
+  nav a span {
+    margin-left: 1em;
+    width: 0;
+    transition: margin-left 0.5s ease;
+  }
+  nav a:hover span {
+    margin-left: 4.5em;
+    width: auto;
+    transition: margin-left 0.5s ease;
+  }
+}
+
+/* SMALL SPACE */
+@media (max-width: 30rem) {
+  .burger {
+    display: block;
+  }
+  /* when the checkbox  is checked */
+  .open_menu:checked + .burger {
+    background: #2980b9;
+    transition: background 0.35s;
+  }
+  .open_menu:checked + .burger + nav {
+    right: 0;
+    transition: all 0.35s;
+  }
+  nav {
+    position: absolute;
+    z-index: 99;
+    width: 100%;
+    right: 100%; /* push the menu off the screen */
+    flex-direction: column; /* remove stack menu */
+    transition: all 0.35s;
+  }
+  nav div {
+    border-bottom: 0.25em solid #fff;
+  }
+  nav a {
+    border-right: 0;
+  }
+  nav a span {
+    margin-left: 4.5em;
+    width: auto;
+    transition: margin-left 0.5s ease;
+  }
+  nav a:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s;
+  }
+  nav a:hover .fa {
+    font-size: 1.25em;
+    width: 3.6em;
+    transition: all 0.35s;
+  }
+}
